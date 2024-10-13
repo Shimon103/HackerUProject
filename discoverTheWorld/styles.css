@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Assistant';
+}
+
+body {
+    background: #E5EEFF;
+    display: grid;
+    justify-content: center;
+}
+
+main {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 295px);
+    grid-template-rows: repeat(6, 270px);
+    margin-block: 300px 270px;
+    margin-inline: auto;
+}
+
+.box {
+    background: red;
+}
+
+#box1 {
+    grid-area: 1/1/3/3;
+    background-color: #020253;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-inline: 70px;
+}
+
+#box16 {
+    grid-area: 4/3/7/5;
+    background: #8E097C;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-inline:10%;
+
+}
+
+h1 {
+    color: #0EE1DA;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing:2px;
+
+}
+h2{
+    color:#F9F9F9;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing:2px;
+
+}
+p{
+    color:#F9F9F9;
+    font-size: 1.5rem;
+}
+label{
+    color: #0EE1DA;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+form{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 20px ;
+}
+.editInput{
+    height: 3rem;
+    width: 100%;
+    border-bottom: 5px solid #0EE1DA;
+    resize: none;
+    line-break: strict;
+    
+}
+#experience{
+    height: 10.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+
+
+}
+#experienceSubmit{
+ background: #0EE1DA;
+ color:#011560;
+ font-size: 2rem;
+ font-weight: 900;
+ padding: 2%;
+}
