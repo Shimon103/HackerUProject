@@ -153,4 +153,7 @@ form {
         font-weight: 900;
         padding: 2%;
     }
+    body{
+        padding: 20px;
+    }
 }
