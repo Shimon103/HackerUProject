@@ -8,3 +8,11 @@
 .text-sd-black{
     text-shadow: 3px 3px 3px black;
 }
+.myknowledge{
+    height: 10vh;
+}
+.myknowledge>img{
+    height: 100%;
+    aspect-ratio: 1;
+
+}
