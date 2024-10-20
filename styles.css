@@ -1,0 +1,10 @@
+.myHero{
+    background: repeating-radial-gradient(circle at 110%, hsla(240, 100%, 25%, 0.8), hsla(240, 100%, 25%, 0.8) 8%, hsla(204, 19%, 26%, 0.8) 12%, hsla(204, 19%, 26%, 0.8) 14%, hsla(240, 100%, 25%, 0.8) 16%);
+    height: 60vh;
+    background-size: cover;
+    background-position: center center;
+    filter: grayscale(100);
+}
+.text-sd-black{
+    text-shadow: 3px 3px 3px black;
+}
