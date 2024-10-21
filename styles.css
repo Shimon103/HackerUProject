@@ -14,5 +14,10 @@
 .myknowledge>img{
     height: 100%;
     aspect-ratio: 1;
+    transition: 0.4s ease-in-out;
+
+}
+.myknowledge>img:hover{
+    transform: scale(150%);
 
 }
