@@ -9,7 +9,7 @@
     text-shadow: 3px 3px 3px black;
 }
 .myknowledge{
-    height: 10vh;
+    height: 15vh;
 }
 .myknowledge>img{
     height: 100%;
@@ -20,4 +20,13 @@
 .myknowledge>img:hover{
     transform: scale(150%);
 
+}
+#myImage{
+    shape-outside: circle();
+}
+#aboutMe{
+    height: 50vh;
+}
+#aboutMe p{
+    width: 75%;
 }
