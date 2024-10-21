@@ -31,11 +31,11 @@
     width: 75%;
 }
 #contactUs{
-    height: 70vh;
+    min-height: 70vh;
     background-image: url('./assets/images/contactus.png');
     background-size: cover;
     display: grid;
-    padding-block: 5%;
+    padding-block: 3%;
     padding-inline:20% ;
     grid-template-columns: 8fr 1fr;
 }

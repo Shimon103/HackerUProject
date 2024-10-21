@@ -93,20 +93,20 @@
 
     <!-- conntact us -->
     <div id="contactUs" class="container-fluid">
-        <form action="" class="w-75 p-5 bg-black">
+        <form action="" class="w-75 d-flex flex-column">
             <h2 class="display-2 fw-bold text-white">צור קשר</h2>
-            <p class="h6 fw-light text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <label for="name"></label><br>
-            <input id="name" type="text"><br>
-            <label for="email"></label><br>
-            <input id="email" type="text"><br>
-            <label for="phone"></label><br>
-            <input id="phone" type="text"><br>
-            <label for="msgContant"></label><br>
-            <textarea name="" id="msgContant"></textarea><br>
-            <button type="submit"></button>
+            <p class="h6 fw-light text-white">ניתן לשלוח הודעה למערכת על גבי הטופס הבא או לחלופין לפנות באופן ישיר דרך הקישורים בצד שמאל</p>
+            <label for="name" class="text-white">שם מלא</label>
+            <input id="name" type="text" class="w-100"><br>
+            <label for="email" class="text-white">דוא"ל</label>
+            <input id="email" type="text" class="w-100"><br>
+            <label for="phone" class="text-white">מס' טלפון</label>
+            <input id="phone" type="tel"  pattern="[0-9]{3}-[0-9]{7}" class="w-100"><br>
+            <label for="msgContant" class="text-white">תוכן ההודעה</label>
+            <textarea name="msgContant" id="msgContant" class="w-100" rows="8"></textarea><br>
+            <button type="submit" class="btn bg-success">שלח הודעה</button>
         </form>
-        <div id="socials">
+        <div id="socials" class="h-75">
             <div id="emailMe">
                 <a href="mailto:harasap103@gmail.com">
                     <img src="./assets/icons/gmailicon.png" alt="email us">
