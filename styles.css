@@ -30,3 +30,23 @@
 #aboutMe p{
     width: 75%;
 }
+#contactUs{
+    height: 70vh;
+    background-image: url('./assets/images/contactus.png');
+    background-size: cover;
+    display: grid;
+    padding-block: 5%;
+    padding-inline:20% ;
+    grid-template-columns: 8fr 1fr;
+}
+#socials{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px
+}
+#socials img{
+    max-width: 100px;
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
