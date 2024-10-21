@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Pressure Tracker</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            padding: 8%;
+            display: flex;
+            background-image: url('../assets/images/heart.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 600px;
+            min-height: 60vh;
+
+            max-height: 90%;
+            overflow-y: scroll;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .input-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .input-section input {
+            margin-right: 5px;
+            width: 15%;
+        }
+
+        .input-section input:nth-child(2) {
+            width: 45%;
+        }
+
+
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #prompt{
+            padding: 4%;
+            background-image: url('../assets/images/bpmachine.jpg');
+            background-position: bottom 130% center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: wheat;
+            width: 40%;
+            border-radius: 1rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            color: black;
+            text-shadow: 1px 1px black;          
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="prompt">
+        <h1>Let us help you track your blood pressure resultes</h1><br>
+        <p>Free blood pressure tracker for nice quallity of life</p>
+    </div>
+
+    <div class="container">
+        <h1>Blood Pressure Tracker</h1>
+        <button id="resetButton">Reset All Tests</button>
+
+        <div class="input-section">
+            <input type="number" id="index" placeholder="Index Number" required size="15">
+            <input type="text" pattern="^\d{3}/\d{2}$" id="bpMeasure" placeholder="BP Measure (XXX/XX)"
+                title="Format: XXX/XX (only numbers)" required>
+            <input type="number" id="heartRate" placeholder="Heart Rate" required>
+            <input type="date" id="date" required>
+            <button id="addButton">Add Test</button>
+        </div>
+
+        <div class="averages">
+            <h2>Averages</h2>
+            <p>Average BP: <span id="avgBP">0/0</span></p>
+            <p>Average Heart Rate: <span id="avgHR">0</span></p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="ofIndex">Index</th>
+                    <th>BP Measure</th>
+                    <th>Heart Rate</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="dataBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let data = JSON.parse(localStorage.getItem('bpData')) || [];
+        let editingIndex = null;
+
+        document.querySelector('button').addEventListener('submit', function (event) {
+            const input = document.getElementById('code');
+            const pattern = /^\d{3}\/\d{2}$/;
+            if (!pattern.test(input.value)) {
+                alert('Please enter the code in the format XXX/XX (only numbers).');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        document.getElementById('addButton').addEventListener('click', function () {
+            const index = document.getElementById('index').value;
+            const bpMeasure = document.getElementById('bpMeasure').value;
+            const heartRate = document.getElementById('heartRate').value;
+            const date = document.getElementById('date').value;
+
+            if (index && bpMeasure && heartRate && date) {
+                const bpParts = bpMeasure.split('/');
+                if (bpParts.length === 2) {
+                    const entry = {
+                        index,
+                        bp: { systolic: +bpParts[0], diastolic: +bpParts[1] },
+                        heartRate: +heartRate,
+                        date
+                    };
+
+                    if (editingIndex !== null) {
+                        data[editingIndex] = entry; // Edit existing entry
+                        editingIndex = null; // Reset editing index
+                    } else {
+                        data.push(entry); // Add new entry
+                    }
+
+                    localStorage.setItem('bpData', JSON.stringify(data)); // Save to local storage
+                    updateTable();
+                    updateAverages();
+                    clearInputs();
+                }
+            }
+        });
+
+        function updateTable() {
+            const tbody = document.getElementById('dataBody');
+            tbody.innerHTML = '';
+
+            data.forEach((entry, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class='ofIndex'>${entry.index}</td>
+                    <td>${entry.bp.systolic}/${entry.bp.diastolic}</td>
+                    <td>${entry.heartRate}</td>
+                    <td>${entry.date}</td>
+                    <td>
+                        <button onclick="editEntry(${index})">Edit</button>
+                        <button onclick="deleteEntry(${index})">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function editEntry(index) {
+            const entry = data[index];
+            document.getElementById('index').value = entry.index;
+            document.getElementById('bpMeasure').value = `${entry.bp.systolic}/${entry.bp.diastolic}`;
+            document.getElementById('heartRate').value = entry.heartRate;
+            document.getElementById('date').value = entry.date;
+            editingIndex = index; // Set editing index
+        }
+
+        function deleteEntry(index) {
+            data.splice(index, 1); // Remove entry from data array
+            localStorage.setItem('bpData', JSON.stringify(data)); // Update local storage
+            updateTable();
+            updateAverages();
+        }
+
+        function resetData() {
+            data = []; // Clear the data array
+            localStorage.removeItem('bpData'); // Clear local storage
+            updateTable();
+            updateAverages();
+            clearInputs();
+        }
+
+        function updateAverages() {
+            if (data.length === 0) {
+                document.getElementById('avgBP').innerText = '0/0';
+                document.getElementById('avgHR').innerText = '0';
+                return;
+            }
+
+            const totalSystolic = data.reduce((sum, entry) => sum + entry.bp.systolic, 0);
+            const totalDiastolic = data.reduce((sum, entry) => sum + entry.bp.diastolic, 0);
+            const totalHR = data.reduce((sum, entry) => sum + entry.heartRate, 0);
+
+            const avgSystolic = (totalSystolic / data.length).toFixed(0);
+            const avgDiastolic = (totalDiastolic / data.length).toFixed(0);
+            const avgHR = (totalHR / data.length).toFixed(0);
+
+            document.getElementById('avgBP').innerText = `${avgSystolic}/${avgDiastolic}`;
+            document.getElementById('avgHR').innerText = avgHR;
+        }
+
+        function clearInputs() {
+            document.getElementById('index').value = '';
+            document.getElementById('bpMeasure').value = '';
+            document.getElementById('heartRate').value = '';
+            document.getElementById('date').value = '';
+        }
+
+        // Load data from local storage on page load
+        window.onload = function () {
+            updateTable();
+            updateAverages();
+        };
+
+        // Add event listener for reset button
+        document.getElementById('resetButton').addEventListener('click', resetData);
+    </script>
+</body>
+
+</html>
