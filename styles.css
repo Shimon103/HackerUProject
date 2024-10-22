@@ -1,53 +1,76 @@
-.myHero{
-    background: repeating-radial-gradient(circle at 110%, hsla(240, 100%, 25%, 0.8), hsla(240, 100%, 25%, 0.8) 8%, hsla(204, 19%, 26%, 0.8) 12%, hsla(204, 19%, 26%, 0.8) 14%, hsla(240, 100%, 25%, 0.8) 16%);
-    height: 60vh;
-    background-size: cover;
-    background-position: center center;
-    filter: grayscale(100);
+*{
+    font-family: "IBM Plex Sans Hebrew", sans-serif;
 }
-.text-sd-black{
+.myHero {
+    /* background: repeating-radial-gradient(circle at 110%, hsla(240, 100%, 25%, 0.8), hsla(240, 100%, 25%, 0.8) 8%, hsla(204, 19%, 26%, 0.8) 12%, hsla(204, 19%, 26%, 0.8) 14%, hsla(240, 100%, 25%, 0.8) 16%); */
+    height: 60vh;
+    background-image: url('./assets/images/mainbg.jpg');
+    background-size: cover;
+    background-position:center right 1000px;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 1);
+    filter: grayscale(0.7);
+}
+
+
+
+.text-sd-black {
     text-shadow: 3px 3px 3px black;
 }
-.myknowledge{
+
+.myknowledge {
     height: 15vh;
 }
-.myknowledge>img{
-    height: 100%;
+
+.myknowledge>img {
+    min-height: 100%;
     aspect-ratio: 1;
     transition: 0.4s ease-in-out;
 
 }
-.myknowledge>img:hover{
+
+.myknowledge>img:hover {
     transform: scale(150%);
 
 }
-#myImage{
+
+#myImage {
     shape-outside: circle();
+    max-height: 40vh;
 }
-#aboutMe{
-    height: 50vh;
+
+#aboutMe {
+    min-height: 70vh;
 }
-#aboutMe p{
-    width: 75%;
+
+#aboutMe p {
+    width: 90%;
 }
-#contactUs{
+
+#contactUs {
     min-height: 70vh;
     background-image: url('./assets/images/contactus.png');
     background-size: cover;
     display: grid;
     padding-block: 3%;
-    padding-inline:20% ;
+    padding-inline: 20%;
     grid-template-columns: 8fr 1fr;
 }
-#socials{
+
+#socials {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px
 }
-#socials img{
+
+#socials img {
     max-width: 100px;
     height: 100%;
     aspect-ratio: 1;
     object-fit: contain;
-    
+
+}
+
+#gallery {
+    min-height: 130vh;
 }
