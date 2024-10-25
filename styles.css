@@ -91,3 +91,6 @@
         2px -2px 10px grey,
         -2px 2px 10px grey;
 }
+input{
+    border-bottom: blue 4px solid;
+}
