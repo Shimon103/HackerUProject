@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: heebo;
+    color: #020253;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+
+    @media (max-width:800px) {
+        font-size: 1.5rem;
+    }
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    @media (max-width:800px) {
+        font-size: 0.9rem;
+    }
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 700;
+
+    @media (max-width:800px) {
+        font-size: 0.8rem;
+    }
+}
+
+// width % based
+@for $i from 1 through 10 {
+    .w#{$i}0 {
+        width: $i * 10%;
+    }
+}
+
+
+// height VP base
+@for $i from 1 through 10 {
+    .page#{$i} {
+        height: $i * 10VH;
+    }
+}
+
+
+@for $i from 1 through 100 {
+    .h#{$i} {
+        height: $i * 1rem;
+    }
+}
+
+
+
+// padding stuff
+@for $i from 1 through 100 {
+    .p#{$i} {
+        padding: $i * 0.5rem;
+    }
+}
+
+@for $i from 1 through 100 {
+    .pr#{$i} {
+        padding-right: $i * 0.5rem;
+    }
+}
+
+@for $i from 1 through 100 {
+    .pl#{$i} {
+        padding-left: $i * 0.5rem;
+    }
+}
+
+@for $i from 1 through 100 {
+    .px#{$i} {
+        padding-inline: $i * 0.5rem;
+    }
+}
+
+@for $i from 1 through 100 {
+    .pt#{$i} {
+        padding-top: $i * 0.5rem;
+    }
+}
+
+@for $i from 1 through 100 {
+    .pb#{$i} {
+        padding-bottom: $i * 0.5rem;
+    }
+}
+
+@for $i from 1 through 100 {
+    .py#{$i} {
+        padding-block: $i * 0.5rem;
+    }
+}
+
+@for $i from 1 through 100 {
+    .gap#{$i} {
+        gap: $i * 0.5rem;
+    }
+}
+
+.m-auto {
+    margin: auto
+}
+
+// //Ratios - list
+// $aspect-ratios: (
+//     0.25: 1,
+//     0.5: 1,
+//     0.75: 1,
+//     1: 1,
+//     1.25: 1,
+//     1.5: 1,
+//     16: 9,
+//     4: 3,
+//     8: 5
+// );
+
+// // Ratio - loop
+// @each $width, $height in $aspect-ratios {
+//     .aspect#{$width}:#{$height} {
+//         aspect-ratio: $width / $height;
+//     }
+// }
+
+// Colors - list
+$colors: (
+    prime: #36454F,
+    secondry: #C2B280,
+    trird: #FFDB58,
+    approved: #006400,
+    warning: #FFFF00,
+    danger: #FF0000,
+    neutral: #FFFFFF
+);
+
+// Colors - loop
+@each $name, $color in $colors {
+    .BG#{$name} {
+        background-color: $color;
+    }
+
+    .TXT#{$name} {
+        color: $color;
+    }
+}
+
+
+// Text stuff
+.TXTcenter {
+    text-align: center;
+}
+
+.TXTright {
+    text-align: right;
+}
+
+.TXTleft {
+    text-align: left;
+}
+
+.TXTjustify {
+    text-align: justify;
+}
+
+
+// Flex prep
+@mixin flex-center($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+.fRowRow {
+    @include flex-center(row);
+}
+
+.fRowCol {
+    @include flex-center(row);
+
+    @media (max-width:800px) {
+        @include flex-center(column);
+
+    }
+}
+
+.fRowColr {
+    @include flex-center(row);
+
+    @media (max-width:800px) {
+        @include flex-center(column-reverse);
+    }
+}
+
+.fColCol {
+    @include flex-center(column);
+}
+
+.fColRow {
+    @include flex-center(column);
+
+    @media (max-width:800px) {
+        @include flex-center(row);
+
+    }
+}
+
+.fSpace {
+    justify-content: space-between;
+}
+
+.fStart {
+    align-items: flex-start;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+input {
+    &.write {
+        background-color: #E5EEFF;
+        border-bottom: #020253 solid 4px;
+        height: 3rem;
+    }
+
+    &.bottun {
+        background-color: #020253;
+        font-size: 1.2rem;
+        color: white;
+        @media (max-width:800px) {
+            width: 100%;
+            font-size: 1rem;
+            
+        }
+    }
+}
+
+.mb100 {
+    @media (max-width:800px) {
+        width: 100%;
+
+    }
+}
+
+.mb80 {
+    @media (max-width:800px) {
+        width: 80%;
+
+    }
+}
+
+.mbh33 {
+    @media (max-width:800px) {
+        height: 33%;
+
+    }
+}
+.mbh80 {
+    @media (max-width:800px) {
+        height: 80%;
+
+    }
+}
+
+.mbh66 {
+    @media (max-width:800px) {
+        height: 66%;
+
+    }
+}
+
+.mbp0 {
+    @media (max-width:800px) {
+        padding: 0px;
+
+    }
+}
