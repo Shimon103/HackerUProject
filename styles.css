@@ -7,7 +7,7 @@
     height: 60vh;
     background-image: url('./assets/images/mainbg.jpg');
     background-size: cover;
-    background-position: center right 1000px;
+    background-position: center right 80vw;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 1);
     filter: grayscale(0.7);
@@ -38,9 +38,11 @@
 #myImage {
     shape-outside: circle();
     max-height: 40vh;
+    background: white;
+
 }
 
-#aboutMe {
+div#aboutMe {
     min-height: 70vh;
 }
 
@@ -48,7 +50,7 @@
     width: 90%;
 }
 
-#contactUs {
+div#contactUs {
     min-height: 70vh;
     background-image: url('./assets/images/contactus.png');
     background-size: cover;
@@ -58,21 +60,22 @@
     grid-template-columns: 8fr 1fr;
 }
 
-#socials {
+div#socials {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px
 }
 
-#socials img {
+div#socials img {
     max-width: 100px;
     height: 100%;
     aspect-ratio: 1;
     object-fit: contain;
 
+
 }
 
-#gallery {
+div#gallery {
     min-height: 130vh;
 }
 
@@ -93,4 +96,7 @@
 }
 input{
     border-bottom: blue 4px solid;
+}
+.active{
+    background: red;
 }
