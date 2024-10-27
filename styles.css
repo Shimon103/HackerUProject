@@ -114,3 +114,7 @@ input{
     background-color: black;
     cursor: grab;
 }
+.card-icon{
+    min-height: 20px;
+    max-height: 60px;
+}
