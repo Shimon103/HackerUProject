@@ -10,11 +10,13 @@
     background-position: center right 80vw;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 1);
-    filter: grayscale(0.7);
+    filter: grayscale(0.4);
 }
 
 
-
+h1, h2, h3, h4, h5, h6{
+    overflow-y: hidden ;
+}
 .text-sd-black {
     text-shadow: 3px 3px 3px black;
 }
@@ -96,4 +98,19 @@ div#gallery {
 }
 input{
     border-bottom: blue 4px solid;
+}
+::-webkit-scrollbar{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: grey;
+    border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: white;
+    cursor: pointer;
+}
+::-webkit-scrollbar-thumb:active{
+    background-color: black;
+    cursor: grab;
 }
