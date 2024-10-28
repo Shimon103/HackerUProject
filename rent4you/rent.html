@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(6, 10vw);
+            grid-template-rows: repeat(3, 10vw);
+            gap:15px;
+            margin-inline: auto;
+        }
+        .forImage{
+            width: 20vw;
+            aspect-ratio: 1;
+            clip-path: polygon(50% 100%,80% 70%, 100% 50%, 70% 20%, 50% 0%, 20% 30%, 0% 50%, 20% 70%);
+            grid-column: span 2;
+            border: 5px groove; 
+            border-radius: 10px;
+            box-shadow: 2px 0px 2px grey;
+            transition: 1s linear;
+            position: relative;
+        }
+        img{
+            height: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+
+        }
+        .forImage:hover{      
+            z-index: 10;   
+            clip-path: polygon(50% 100%,100% 100%, 100% 50%, 100% 0%, 50% 0%, 0% 0%, 0% 50%, 0% 100%);            
+        }
+        .forImage:nth-child(4){
+            grid-column: 2 / span 2;
+            
+        }
+        span{
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            font-size: 2vw;
+            top:45%;
+            left: 30%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>בואו והשכירו דירה במקומות  החמים ביותר בישראל</h1>
+    <div class="container">
+        <div class="forImage">
+            <img src="../assets/images/tlv.jpg" alt="Tel-Aviv" class="rentMe"><span>TLV</span>
+        </div>
+        <div class="forImage">
+            <img src="../assets/images/beersheva.jpg" alt="Beer Sheva" class="rentMe"><span>Beer Sheva</span>
+        </div>
+        <div class="forImage">
+            <img src="../assets/images/netanya.jpg" alt="Netanya" class="rentMe"><span>Netanya</span>
+        </div>
+        <div class="forImage">
+            <img src="../assets/images/herzelia.webp" alt="Herzelia" class="rentMe"><span>Herzelia</span>
+        </div>
+        <div class="forImage">
+            <img src="../assets/images/jeru.jpg" alt="Jerusalem" class="rentMe"><span>Jerusalem</span>
+        </div>
+        <div class="forImage">
+            <img src="../assets/images/rishonlezion.jpg" alt="Rishon Lezion" class="rentMe"><span>Rishion Lezion</span>
+        </div>
+        <div class="forImage">
+            <img src="../assets/images/petah tikva.jpg" alt="Petah Tikva" class="rentMe"><span>Petah Tikva</span>
+        </div>
+        <div class="forImage">
+            <img src="../assets/images/kfarhayam.jpg" alt="Kfar Hayam" class="rentMe"><span>Kfar Hayam</span>
+        </div>
+    </div>
+
+</body>
+</html>
