@@ -17,29 +17,23 @@
 
 <body>
     <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-secondary sticky-top">
-        <a class="navbar-brand" href="#">Shimon Socol</a>
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-md-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Shimon Socol</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MyMenu" aria-controls="MyMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" id="home" href="#">בית</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ms-5 fs-5" id="aboueMe" href="#aboutMe">קצת עליי</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ms-5 fs-5" id="gallery" href="#gallery">העבודות שלי</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ms-5 fs-5" id="contactUs" href="#contactUs">צור קשר</a>
-                </li>
-            </ul>
+          </button>
+          <div class="collapse navbar-collapse me-4" id="MyMenu">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">בית</a>
+              <a class="nav-link" href="#aboutMe">קצת עלי</a>
+              <a class="nav-link" href="#gallery">גלריית עבודות</a>
+              <a class="nav-link" href="#contactUs">צור קשר</a>
+            </div>
+          </div>
         </div>
-    </nav>
+      </nav>
+
     <!-- hero -->
     <div id="home" class="container-fluid myHero d-flex flex-column gap-2 justify-content-center">
         <h1 class="text-white text-sd-black display-1 text-center">תיק עבודות
@@ -208,9 +202,10 @@
                     <img src="./assets/icons/steamicon.png" alt="steam">
                 </a>
             </div>
-
         </div>
     </div>
+
+    <div id="backHome"><a href="#home">↑</a></div>
 
     <!-- footer -->
     <div id="footer" class="d-flex justify-content-between p-2">
