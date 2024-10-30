@@ -17,7 +17,7 @@ main {
     gap: 20px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    margin-block: 300px 270px;
+    margin-block: 20vh 10vw;
     margin-inline: auto;
 }
 
