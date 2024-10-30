@@ -13,16 +13,6 @@
     filter: grayscale(0.4);
 }
 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-y: hidden;
-}
-
 .text-sd-black {
     text-shadow: 3px 3px 3px black;
 }
@@ -130,7 +120,8 @@ input {
     min-height: 20px;
     max-height: 60px;
 }
-#backHome{
+
+#backHome {
     position: fixed;
     bottom: 10vh;
     left: 3vw;
@@ -139,10 +130,12 @@ input {
     padding: 4px;
     border-radius: 3px;
 }
-#backHome a:link{
+
+#backHome a:link {
     text-decoration: none;
 }
-#backHome a:visited{
+
+#backHome a:visited {
     text-decoration: none;
 }
 
