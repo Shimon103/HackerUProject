@@ -14,9 +14,6 @@
 }
 
 
-h1, h2, h3, h4, h5, h6{
-    overflow-y: hidden ;
-}
 .text-sd-black {
     text-shadow: 3px 3px 3px black;
 }

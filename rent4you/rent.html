@@ -1,55 +1,84 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
     <style>
-        .container{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Assistant';
+        }
+
+        body {
+            background: linear-gradient(45deg, grey 10%, silver 25%, grey, silver);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        body::before{
+            content: 'Rent4U';
+        }
+
+        .container {
             display: grid;
             grid-template-columns: repeat(6, 10vw);
             grid-template-rows: repeat(3, 10vw);
-            gap:15px;
-            margin-inline: auto;
+            gap: 15px;
         }
-        .forImage{
+
+        .forImage {
             width: 20vw;
             aspect-ratio: 1;
-            clip-path: polygon(50% 100%,80% 70%, 100% 50%, 70% 20%, 50% 0%, 20% 30%, 0% 50%, 20% 70%);
+            clip-path: polygon(50% 100%, 80% 70%, 100% 50%, 70% 20%, 50% 0%, 20% 30%, 0% 50%, 20% 70%);
             grid-column: span 2;
-            border: 5px groove; 
+            border: 5px groove;
             border-radius: 10px;
             box-shadow: 2px 0px 2px grey;
             transition: 1s linear;
             position: relative;
         }
-        img{
+
+        img {
             height: 100%;
             aspect-ratio: 1;
             object-fit: cover;
 
         }
-        .forImage:hover{      
-            z-index: 10;   
-            clip-path: polygon(50% 100%,100% 100%, 100% 50%, 100% 0%, 50% 0%, 0% 0%, 0% 50%, 0% 100%);            
+
+        .forImage:hover {
+            z-index: 10;
+            clip-path: polygon(50% 100%, 100% 100%, 100% 50%, 100% 0%, 50% 0%, 0% 0%, 0% 50%, 0% 100%);
         }
-        .forImage:nth-child(4){
+
+        .forImage:nth-child(4) {
             grid-column: 2 / span 2;
-            
+
         }
-        span{
+
+        span {
             position: absolute;
             color: white;
             text-shadow: 1px 1px 2px black;
             font-size: 2vw;
-            top:45%;
+            top: 45%;
             left: 30%;
             background: rgba(0, 0, 0, 0.5);
+        }
+        h1{
+            margin-block: 10px;
         }
     </style>
     <title>Document</title>
 </head>
+
 <body>
-    <h1>בואו והשכירו דירה במקומות  החמים ביותר בישראל</h1>
+    <h1>בואו והשכירו דירה במקומות החמים ביותר בישראל</h1>
     <div class="container">
         <div class="forImage">
             <img src="../assets/images/tlv.jpg" alt="Tel-Aviv" class="rentMe"><span>TLV</span>
@@ -77,5 +106,7 @@
         </div>
     </div>
 
+
 </body>
+
 </html>
