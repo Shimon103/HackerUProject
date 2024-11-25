@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Assistant';
+<<<<<<< HEAD
         }
 
         body {
@@ -20,6 +21,18 @@
             align-items: center;
             flex-direction: column;
             
+=======
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        body{
+            background: linear-gradient(135deg, orange 5% , silver 20% 80%, orange 95%);
+            height: 100dvh;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+>>>>>>> d2383616b61869099ed60cd556a7458f3808278b
         }
         body::before{
             content: 'Rent4U';
@@ -30,8 +43,14 @@
             grid-template-columns: repeat(6, 10vw);
             grid-template-rows: repeat(3, 10vw);
             gap: 15px;
+<<<<<<< HEAD
         }
 
+=======
+            margin-inline: auto;
+        }
+        
+>>>>>>> d2383616b61869099ed60cd556a7458f3808278b
         .forImage {
             width: 20vw;
             aspect-ratio: 1;
@@ -40,7 +59,7 @@
             border: 5px groove;
             border-radius: 10px;
             box-shadow: 2px 0px 2px grey;
-            transition: 1s linear;
+            transition: 0.5s linear;
             position: relative;
         }
 
@@ -48,9 +67,20 @@
             height: 100%;
             aspect-ratio: 1;
             object-fit: cover;
+        }
+
+        .forImage:hover {
+            z-index: 10;
+            clip-path: polygon(50% 100%, 100% 100%, 100% 50%, 100% 0%, 50% 0%, 0% 0%, 0% 50%, 0% 100%);
+            cursor: pointer;
+        }
+
+        .forImage:nth-child(4) {
+            grid-column: 2 / span 2;
 
         }
 
+<<<<<<< HEAD
         .forImage:hover {
             z-index: 10;
             clip-path: polygon(50% 100%, 100% 100%, 100% 50%, 100% 0%, 50% 0%, 0% 0%, 0% 50%, 0% 100%);
@@ -61,19 +91,67 @@
 
         }
 
+=======
+>>>>>>> d2383616b61869099ed60cd556a7458f3808278b
         span {
             position: absolute;
             color: white;
             text-shadow: 1px 1px 2px black;
             font-size: 2vw;
+<<<<<<< HEAD
             top: 45%;
             left: 30%;
+=======
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+>>>>>>> d2383616b61869099ed60cd556a7458f3808278b
             background: rgba(0, 0, 0, 0.5);
+            padding: 0.4vw;
         }
+<<<<<<< HEAD
         h1{
             margin-block: 10px;
         }
     </style>
+=======
+        @media (max-width:780px){
+            h1{
+                font-size: 4vh;
+                padding-inline: 10%;
+                
+            }
+            .container{
+            display: grid;
+            grid-template-columns: repeat(4, 15vw);
+            grid-template-rows: repeat(6, 15vw);  
+            gap: 15px;
+            margin-inline: auto;
+            }
+            .forImage {
+            width: 30vw;
+        }
+        .forImage:nth-child(3) {
+            grid-column: 2 / span 2;
+
+        }
+        .forImage:nth-child(6) {
+            grid-column: 2 / span 2;
+
+        }
+        .forImage:nth-child(4) {
+            grid-column: 1 / span 2;
+
+        }
+        .forImage:hover {
+            cursor: pointer;
+            clip-path: polygon(50% 100%, 80% 70%, 100% 50%, 70% 20%, 50% 0%, 20% 30%, 0% 50%, 20% 70%);
+        }
+
+        }
+    </style> 
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+>>>>>>> d2383616b61869099ed60cd556a7458f3808278b
     <title>Document</title>
 </head>
 
@@ -81,28 +159,28 @@
     <h1>בואו והשכירו דירה במקומות החמים ביותר בישראל</h1>
     <div class="container">
         <div class="forImage">
-            <img src="../assets/images/tlv.jpg" alt="Tel-Aviv" class="rentMe"><span>TLV</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=2&area=1&city=5000&zoom=11"><img src="../assets/images/tlv.jpg" alt="Tel-Aviv" class="rentMe"><span>TLV</span></a>
         </div>
         <div class="forImage">
-            <img src="../assets/images/beersheva.jpg" alt="Beer Sheva" class="rentMe"><span>Beer Sheva</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=43&area=22&city=9000&zoom=12"><img src="../assets/images/beersheva.jpg" alt="Beer Sheva" class="rentMe"><span>Beer Sheva</span></a>
         </div>
         <div class="forImage">
-            <img src="../assets/images/netanya.jpg" alt="Netanya" class="rentMe"><span>Netanya</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=19&area=17&city=7400"><img src="../assets/images/netanya.jpg" alt="Netanya" class="rentMe"><span>Netanya</span></a>
         </div>
         <div class="forImage">
-            <img src="../assets/images/herzelia.webp" alt="Herzelia" class="rentMe"><span>Herzelia</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=19&area=18&city=6400&zoom=13"><img src="../assets/images/herzelia.webp" alt="Herzelia" class="rentMe"><span>Herzelia</span></a>
         </div>
         <div class="forImage">
-            <img src="../assets/images/jeru.jpg" alt="Jerusalem" class="rentMe"><span>Jerusalem</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=100&area=7&city=3000&zoom=11"><img src="../assets/images/jeru.jpg" alt="Jerusalem" class="rentMe"><span>Jerusalem</span></a>
         </div>
         <div class="forImage">
-            <img src="../assets/images/rishonlezion.jpg" alt="Rishon Lezion" class="rentMe"><span>Rishion Lezion</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=2&area=9&city=8300&zoom=12"><img src="../assets/images/rishonlezion.jpg" alt="Rishon Lezion" class="rentMe"><span>Rishion <br> Lezion</span></a>
         </div>
         <div class="forImage">
-            <img src="../assets/images/petah tikva.jpg" alt="Petah Tikva" class="rentMe"><span>Petah Tikva</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=2&area=4&city=7900"><img src="../assets/images/petah tikva.jpg" alt="Petah Tikva" class="rentMe"><span>Petah Tikva</span></a>
         </div>
         <div class="forImage">
-            <img src="../assets/images/kfarhayam.jpg" alt="Kfar Hayam" class="rentMe"><span>Kfar Hayam</span>
+            <a target="_blank" href="https://www.yad2.co.il/realestate/rent?topArea=101&area=15&city=6500&zoom=16&bBox=32.447214%2C34.874983%2C32.451944%2C34.883712"><img src="../assets/images/kfarhayam.jpg" alt="Kfar Hayam" class="rentMe"><span>Kfar Hayam</span></a>
         </div>
     </div>
 

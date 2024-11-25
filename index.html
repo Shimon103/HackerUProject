@@ -17,10 +17,10 @@
 
 <body>
     <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-secondary sticky-top">
-        <a class="navbar-brand" href="#">Shimon Socol</a>
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-md-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Shimon Socol</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MyMenu" aria-controls="MyMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbarNavDropdown">
@@ -29,17 +29,18 @@
                     <a class="nav-link" id="home" href="#">בית</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="aboueMe" href="#aboutMe">קצת עליי</a>
+                    <a class="nav-link ms-5 fs-5" id="aboueMe" href="#aboutMe">קצת עליי</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="gallery" href="#gallery">העבודות שלי</a>
+                    <a class="nav-link ms-5 fs-5" id="gallery" href="#gallery">העבודות שלי</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="contactUs" href="#contactUs">צור קשר</a>
+                    <a class="nav-link ms-5 fs-5" id="contactUs" href="#contactUs">צור קשר</a>
                 </li>
             </ul>
         </div>
-    </nav>
+      </nav>
+
     <!-- hero -->
     <div id="home" class="container-fluid myHero d-flex flex-column gap-2 justify-content-center">
         <h1 class="text-white text-sd-black display-1 text-center">תיק עבודות
@@ -48,8 +49,7 @@
             למיטב היכולות כישורי פיתוח האתרים אשר נרכשו במהלך לימודי הפיתוח</p>
     </div>
     <!-- techs -->
-    <div id="techUsage"
-        class="myknowledge container-fluid bg-white d-flex justify-content-evenly align-content-center p-4">
+    <div id="techUsage" class="myknowledge container-fluid bg-white d-flex justify-content-evenly flex-wrap align-content-center p-4">
         <div class="d-flex align-items-center text-center h3">מיומנויות</div>
         <img src="./assets/icons/htmlicon.png" alt="html icon">
         <img src="./assets/icons/cssicon.png" alt="css icon">
@@ -84,9 +84,9 @@
     <div class="container-fluid p-5 bg-body-secondary d-flex flex-column g-4" id="gallery">
         <h2 class="display-2 text-center">עבודות נבחרות</h2>
         <p class="h4 text-center">גלריית עבודות המביאות לידי ביטוי חלק מהיכולות הקיימות</p>
-        <div class="container w-75 d-flex flex-wrap gap-4">
+        <div class="container w-75 d-flex flex-wrap gap-4" id="galleryContent">
             <div class="card col g-0">
-                <img class="card-img-top" src="./assets/images/discover.png" alt="Card image cap">
+                <img class="card-img-top" src="./assets/images/discover.png" alt="discover would site">
                 <div class="card-body">
                     <h5 class="card-title text-center">גלו את העולם</h5>
                     <p class="card-text text-center">הצטרפו למסעות בין יבשתיות ונגלה העולם</p>
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="card col">
-                <img class="card-img-top" src="./assets/images/supportteam.png" alt="Card image cap">
+                <img class="card-img-top" src="./assets/images/supportteam.png" alt="join job">
                 <div class="card-body">
                     <h5 class="card-title text-center">גיוס לצוות תמיכה</h5>
                     <p class="card-text text-center">בואו ותצטרפו לצוות התמיכה שלנו 😀</p>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="card col">
-                <img class="card-img-top" src="./assets/images/fwgallery.png" alt="Card image cap">
+                <img class="card-img-top" src="./assets/images/fwgallery.png" alt="academy forward">
                 <div class="card-body">
                     <h5 class="card-title text-center">המסלול האקדמי</h5>
                     <p class="card-text text-center">הצטרפו למסלול האקדמי המתקדם שלנו</p>
@@ -123,7 +123,7 @@
             </div>
             <div class="w-100"></div>
             <div class="card col">
-                <img class="card-img-top" src="./assets/images/coffee.png" alt="Card image cap">
+                <img class="card-img-top" src="./assets/images/coffee.png" alt="coffee coupon site">
                 <div class="card-body text-center">
                     <h5 class="card-title text-center">קופון לקפה</h5>
                     <p class="card-text">יאי קופון לקפה אבל לא סטאבאקס</p>
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <div class="card col">
-                <img class="card-img-top" src="./assets/images/bptracker.png" alt="Card image cap">
+                <img class="card-img-top" src="./assets/images/bptracker.png" alt="bp tracker site">
                 <div class="card-body">
                     <h5 class="card-title text-center">מעקב לחץ דם</h5>
                     <p class="card-text text-center">נמאס לכם ממעקב ידני אחרי מדידות לחץ דם? הינה הפתרון!</p>
@@ -149,17 +149,14 @@
                 </div>
             </div>
             <div class="card col">
-                <img class="card-img-top" src="./assets/images/discover.png" alt="Card image cap">
+                <img class="card-img-top" src="./assets/images/rent4u.png" alt="rent4u site">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Card title</h5>
-                    <p class="card-text text-center">Some quick example text to build on the card title and make up the
-                        bulk of the
-                        card's
-                        content.</p>
+                    <h5 class="card-title text-center">מצאו את הדירה הבאה שלכם</h5>
+                    <p class="card-text text-center">הדירות הכי שוות במקומות הכי חמים</p>
                     <div class="d-flex justify-content-center my-2"><img src="./assets/icons/htmlicon.png"
                             alt="html icon" class="card-icon">
                         <img src="./assets/icons/cssicon.png" alt="css icon" class="card-icon">
-                    </div> <a href="#" class="btn btn-primary float-start ms-4">לעמוד הפרוייקט >></a>
+                    </div> <a href="./rent4you/index.html" class="btn btn-primary float-start ms-4">לעמוד הפרוייקט >></a>
                 </div>
             </div>
         </div>
@@ -212,9 +209,10 @@
                     <img src="./assets/icons/steamicon.png" alt="steam">
                 </a>
             </div>
-
         </div>
     </div>
+
+    <div id="backHome"><a href="#home">↑</a></div>
 
     <!-- footer -->
     <div id="footer" class="d-flex justify-content-between p-2">

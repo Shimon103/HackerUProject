@@ -70,6 +70,10 @@
             border-radius: 4px;
             cursor: pointer;
         }
+        #bpMech>img{
+            width: 100%;
+            border-radius: 2rem;
+        }
 
         button:hover {
             background-color: #218838;
@@ -98,17 +102,13 @@
 
         #prompt{
             padding: 4%;
-            background-image: url('../assets/images/bpmachine.jpg');
-            background-position: bottom 130% center;
-            background-size: contain;
-            background-repeat: no-repeat;
             background-color: wheat;
             width: 40%;
             border-radius: 1rem;
             text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: end;
+            justify-content: space-evenly;
             color: black;
             text-shadow: 1px 1px black;          
         }
@@ -122,6 +122,9 @@
                 background-image: none;
                 background-color: rgba(255,220,220,0.8);
             }
+            #bpMech{
+                display: none;
+            }
             
         }
 
@@ -130,6 +133,7 @@
 
 <body>
     <div id="prompt">
+        <div id="bpMech"><img src="../assets/images/bpmachine.jpg" alt="blood pressure machine"></div>
         <h1>Let us help you track your blood pressure resultes</h1><br>
         <p>Free blood pressure tracker for nice quallity of life</p>
     </div>
