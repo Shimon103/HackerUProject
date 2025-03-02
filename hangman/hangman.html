@@ -11,14 +11,11 @@
 </head>
 
 <body>
-    <!-- interface -->
     <div id="interface">
         <h1>Hangman</h1>
-        <!-- curent word, id to change with js -->
-        <!-- input for user to guess a letter, keyboard with id an class for event listener -->
         <div class="interactive">
             <h2>Current Word: <ul id="current-word">Test</ul></h2>
-            <div id="hint1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, veniam? Quam dolorum repudiandae fuga expedita ullam explicabo reiciendis quidem tempora.</div>
+            <div id="hint1">Hint 1</div>
             <div id="hint2" class="hiddenText"></div>
             <div id="keyboard">
                 <button id="A" class="letter">A</button>
@@ -49,23 +46,23 @@
                 <button id="Z" class="letter">Z</button>
             </div>
             <div id="gusses">
-                <!-- letters already guessed, update with js -->
-                <!-- current number of guesses counter update with js -->
                 <p>Letters Already Guessed: <span id="letters-guessed"></span></p>
-                <p>Number of Guesses Remaining: <span id="guesses-remaining">0</span>/6</p>
+                <p>Number of Guesses Remaining: <span id="guesses-remaining">0</span></p>
             </div>
         </div>
         <div class="hangedImg">
             <div id="hangedman">
-                <img id="hangedManImg" src="./assets/hangman-0.svg" alt="hanged Man 0 Lines">
+                <img id="hangedManImg" src="./assets/hangman-0.svg" alt="Hanged Man 0 Lines">
             </div>
         </div>
     </div>
-    <!-- Hidden win/lose -->
-    <div id="hidden">
-        <p>You Win!!</p>
-        <p>You Lose!!</p>
-    </div>
-</body>
 
-</html>
+    <div id="overlay" class="overlay">
+        <div class="overlay-message">
+            <p id="winMessage" class="hidden">You Win!!</p>
+            <p id="loseMessage" class="hidden">You Lose!!</p>
+            <button id="resetBtn">Reset Game</button>
+        </div>
+    </div>
+
+</body>
