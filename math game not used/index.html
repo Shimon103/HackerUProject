@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #game-container, #history-container {
+            display: none;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculation Game</h1>
+    <div id="start-container">
+        <input id="player-name" type="text" placeholder="Enter your name (max 12 chars)" maxlength="12">
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <div id="game-container">
+        <h2 id="question">Question</h2>
+        <input id="answer" type="number" placeholder="Enter your answer">
+        <button onclick="submitAnswer()">Submit</button>
+        <p id="score">Score: 0</p>
+        <p id="progress">Question 1 of 10</p>
+    </div>
+
+    <div id="history-container">
+        <h2>Game History</h2>
+        <ul id="history-list"></ul>
+        <button onclick="clearHistory()">Clear History</button>
+    </div>
+
+    <button onclick="toggleHistory()">View History</button>
+
+    <script>
+        // Variables
+        const OPERATORS = ['+', '-', '*', '/'];
+        let playerName = '';
+        let score = 0;
+        let questionIndex = 0;
+        let history = JSON.parse(localStorage.getItem('gameHistory')) || [];
+        let currentQuestion = {};
+
+        // Utility functions
+        function generateQuestion() {
+            const num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const operator = OPERATORS[Math.floor(Math.random() * OPERATORS.length)];
+
+            let questionText = `${num1} ${operator} ${num2}`;
+            let answer;
+
+            switch (operator) {
+                case '+':
+                    answer = num1 + num2;
+                    break;
+                case '-':
+                    answer = num1 - num2;
+                    break;
+                case '*':
+                    answer = num1 * num2;
+                    break;
+                case '/':
+                    // Ensure division results in whole numbers or 0.5
+                    if (num1 % num2 === 0 || num1 / num2 === 0.5) {
+                        answer = num1 / num2;
+                    } else {
+                        // Force a valid division question
+                        return generateQuestion();
+                    }
+                    questionText = `${num1} ÷ ${num2}`;
+                    break;
+            }
+
+            return { questionText, answer };
+        }
+
+        function startGame() {
+            const nameInput = document.getElementById('player-name');
+            playerName = nameInput.value.trim();
+
+            if (!playerName) {
+                alert('Please enter a name!');
+                return;
+            }
+
+            score = 0;
+            questionIndex = 0;
+            document.getElementById('score').textContent = `Score: ${score}`;
+            document.getElementById('progress').textContent = `Question 1 of 10`;
+            document.getElementById('start-container').style.display = 'none';
+            document.getElementById('game-container').style.display = 'block';
+
+            loadNextQuestion();
+        }
+
+        function loadNextQuestion() {
+            if (questionIndex >= 10) {
+                endGame();
+                return;
+            }
+
+            questionIndex++;
+            currentQuestion = generateQuestion();
+            document.getElementById('question').textContent = currentQuestion.questionText;
+            document.getElementById('progress').textContent = `Question ${questionIndex} of 10`;
+            document.getElementById('answer').value = '';
+        }
+
+        function submitAnswer() {
+            const userAnswer = parseFloat(document.getElementById('answer').value);
+
+            if (userAnswer === currentQuestion.answer) {
+                score++;
+                document.getElementById('score').textContent = `Score: ${score}`;
+            }
+
+            loadNextQuestion();
+        }
+
+        function endGame() {
+            alert(`Game over! You scored ${score} points.`);
+            saveGameHistory(playerName, score);
+
+            document.getElementById('game-container').style.display = 'none';
+            document.getElementById('start-container').style.display = 'block';
+        }
+
+        function saveGameHistory(name, score) {
+            history.push({ name, score });
+            localStorage.setItem('gameHistory', JSON.stringify(history));
+        }
+
+        function toggleHistory() {
+            const historyContainer = document.getElementById('history-container');
+            historyContainer.style.display = historyContainer.style.display === 'block' ? 'none' : 'block';
+
+            updateHistoryDisplay();
+        }
+
+        function updateHistoryDisplay() {
+            const historyList = document.getElementById('history-list');
+            historyList.innerHTML = history.map(record => `<li>${record.name}: ${record.score} points</li>`).join('');
+        }
+
+        function clearHistory() {
+            history = [];
+            localStorage.removeItem('gameHistory');
+            updateHistoryDisplay();
+        }
+    </script>
+</body>
+</html>

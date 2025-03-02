@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2980B9;
+    color: #ECF0F1;
+    height: 2em;
+    font-size: 1.5em;
+    margin: 0 5px;
+    padding: 5px;
+    border: 3px solid #2980B9;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.letter:hover {
+    background: #3498DB;
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+#interface {
+    width: 80%;
+    height: 80vh;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background: #2C3E50;
+    padding: 5vh;
+    gap: 3%;
+}
+
+h1 {
+    width: 100%;
+    margin-top: 2vh;
+    text-align: center;
+    font-size: 4.5em;
+    color: #F39C12;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    color: #F39C12;
+}
+
+#hangedman {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+#gusses {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.interactive {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.hiddenText {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #interface {
+        width: 90%;
+        padding: 5vh;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .letter {
+        font-size: 1.2em;
+    }
+
+    .interactive {
+        width: 100%;
+    }
+
+}
+
+#current-word {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap:8px
+}
+#guessLetter {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    border-bottom: black 2px solid;
+}
+p{
+    font-size: 1em;
+    text-align: center;
+}
+.hangedImg{
+    object-fit: fill;
+    width: 40%;
+    overflow: hidden;
+}
+#hangedManImg{
+    width: 100%;
+    height: 100%;
+}

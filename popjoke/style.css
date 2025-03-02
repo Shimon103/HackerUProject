@@ -1,0 +1,79 @@
+body {
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+    font-size: 3em;
+}
+
+.categoryContainer {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.jokeContainer {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.joke {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+.category-Any {
+    background: radial-gradient(circle, #f0f0f0, #d0d0d0);
+    color: #333; 
+}
+
+.category-Dark {
+    background: radial-gradient(circle, #212529, #495057);
+    color: #f8f9fa; 
+}
+.category-Programming {
+    background: radial-gradient(circle, #007bff, #0056b3);
+    color: #ffffff;
+}
+
+.category-Pun {
+    background: radial-gradient(circle, #ff6347, #ff4500);
+    color: #ffffff;
+}
+
+.category-Spooky {
+    background: radial-gradient(circle, #000000, #343a40);
+    color: #ffffff;
+}
+
+.category-Christmas {
+    background: radial-gradient(circle, #28a745, #155724);
+    color: #ffffff;
+}
+
+@media (max-width: 760px) {
+    .categoryContainer, .jokeContainer {
+        margin: 20px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}

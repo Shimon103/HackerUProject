@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hidden{
+    display: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(244, 244, 244);
+    color: rgb(51, 51, 51);
+}
+
+header {
+    background-color: rgb(44, 62, 80);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+button {
+    background-color: rgb(52, 152, 219);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(41, 128, 185);
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+nav#menu {
+    width: 20%;
+    padding: 0.5rem;
+}
+
+nav#menu ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav#menu ul li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+
+nav#menu ul li a {
+    color: rgb(44, 62, 80);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav#menu ul li a:hover {
+    color: rgb(52, 152, 219);
+}
+
+nav#menu ul li:hover {
+    background-color: rgb(52, 152, 219);
+    padding-left: 20px;
+}
+
+nav#menu ul li:active {
+    background-color: rgb(41, 128, 185); /* Slightly darker on click */
+    transform: scale(0.98); /* Slight shrink effect on click */
+}
+
+#content {
+    width: 75%;
+}
+
+#balanceDiv,
+#accountDiv,
+#transactionDiv {
+    margin-bottom: 20px;
+}
+
+#balanceDiv h2,
+#accountDiv h2,
+#transactionDiv h2 {
+    font-size: 1.5rem;
+}
+
+#balance {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(39, 174, 96);
+}
+
+#accountDiv table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+#accountDiv th,
+#accountDiv td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+#accountDiv th {
+    background-color: rgb(236, 240, 241);
+}
+
+#accountDiv tbody tr:nth-child(even) {
+    background-color: rgb(249, 249, 249);
+}
+
+#transactionDiv table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+#transactionDiv th,
+#transactionDiv td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+#transactionDiv th {
+    background-color: rgb(236, 240, 241);
+}
+
+#transactionDiv tbody tr:nth-child(even) {
+    background-color: rgb(249, 249, 249);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    display: none;
+}
+
+#popup h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#popup label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#popup input,
+#popup select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+}
+
+#popup button {
+    margin-right: 10px;
+}
+
+#menuButton {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    main{
+        flex-direction: column;
+    }
+
+    nav#menu {
+        display: none;
+        background: grey;
+        opacity: 0.8;
+    }
+
+    #menuButton {
+        display: block;
+        z-index: 999;
+    }
+
+    #accountDiv table,
+    #transactionDiv table {
+        font-size: 0.9rem;
+    }
+
+    #menuButton {
+        display: block;
+        background-color: rgb(52, 152, 219);
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    nav#menu.open {
+        display: block;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        height: 100vh;
+        z-index: 500;
+        width: 60vw;
+        padding: 1em;
+        color: white;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Prices</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js" defer></script>
+   
+</head>
+
+<body>
+    <h1>Cryptocurrency Prices</h1>
+
+    <!-- Controls for Sorting and Search -->
+    <div class="controls">
+        <div>
+            <label for="sortBy">Sort By:</label>
+            <select id="sortBy" class="form-select">
+                <option value="name_asc">Name (A-Z)</option>
+                <option value="name_desc">Name (Z-A)</option>
+                <option value="price_asc">Price (Low to High)</option>
+                <option value="price_desc">Price (High to Low)</option>
+            </select>
+        </div>
+        <div>
+            <label for="search">Search:</label>
+            <input type="text" id="search" class="form-control" placeholder="Search by Name">
+        </div>
+    </div>
+
+    <div class="cryptoContainer" id="cryptoContainer">
+        <!-- Loop Cards for Cryptocurrency Prices will be displayed here -->
+    </div>
+
+    <footer></footer>
+</body>
+
+</html>

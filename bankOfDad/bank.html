@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the Bank of Dad</h1>
+        <button type="button" id="resetBank">clear all</button>
+        <button id="menuButton">Menu</button>
+    </header>
+    <main>
+        <nav id="menu">
+            <ul>
+                <li id="home" class="menu-item">Home</li>
+                <li id="account" class="menu-item">Accounts</li>
+                <li id="transactions" class="menu-item">Transactions</li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div id="balanceDiv" class="contentArea">
+                <h2>Balance: <span id="balance">0</span> </h2>
+                <button type="button" id="income">Add money</button>
+            </div>
+
+            <div id="accountDiv" class="hidden contentArea">
+                <h2>Accounts</h2>
+                <button id="newAccount">+Add account</button>
+                <table id="accountsTable">
+                    <thead>
+                        <td>Name</td>
+                        <td>Chores</td>
+                        <td>Transactions</td>
+                        <td>Total amount</td>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="transactionDiv" class="hidden contentArea">
+                <h2>Transactions</h2>
+                <button id="newTransaction" onclick="openPopup()">+Add transaction</button>
+                <div id="overlay" onclick="closePopup()"></div>
+                <div id="popup">
+                    <h3>New transaction</h3>
+                    <form id="popupForm">
+                        <label for="names">To whom? </label>
+                        <select id="names" name="names"></select><br>
+
+                        <label for="reason">Why?</label>
+                        <select id="reason" name="reason"></select><br>
+
+                        <label for="amount">Amount:</label>
+                        <input id="amount" name="amount" type="number"><br>
+
+                        <label for="date">When:</label>
+                        <input type="date" id="date" name="date"><br>
+
+                        <button type="button" id="submitTransaction">Submit</button>
+                        <button type="button" onclick="closePopup()">Cancel</button>
+                    </form>
+                </div>
+                <div id="popup"></div>
+                <table id="transactionsTable">
+                    <thead>
+                        <td>Account</td>
+                        <td>Reason</td>
+                        <td>Amount</td>
+                        <td>Date</td>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </main>
+
+
+</body>
+
+</html>

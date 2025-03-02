@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./wordlist.js" defer></script>
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <!-- interface -->
+    <div id="interface">
+        <h1>Hangman</h1>
+        <!-- curent word, id to change with js -->
+        <!-- input for user to guess a letter, keyboard with id an class for event listener -->
+        <div class="interactive">
+            <h2>Current Word: <ul id="current-word">Test</ul></h2>
+            <div id="hint1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, veniam? Quam dolorum repudiandae fuga expedita ullam explicabo reiciendis quidem tempora.</div>
+            <div id="hint2" class="hiddenText"></div>
+            <div id="keyboard">
+                <button id="A" class="letter">A</button>
+                <button id="B" class="letter">B</button>
+                <button id="C" class="letter">C</button>
+                <button id="D" class="letter">D</button>
+                <button id="E" class="letter">E</button>
+                <button id="F" class="letter">F</button>
+                <button id="G" class="letter">G</button>
+                <button id="H" class="letter">H</button>
+                <button id="I" class="letter">I</button>
+                <button id="J" class="letter">J</button>
+                <button id="K" class="letter">K</button>
+                <button id="L" class="letter">L</button>
+                <button id="M" class="letter">M</button>
+                <button id="N" class="letter">N</button>
+                <button id="O" class="letter">O</button>
+                <button id="P" class="letter">P</button>
+                <button id="Q" class="letter">Q</button>
+                <button id="R" class="letter">R</button>
+                <button id="S" class="letter">S</button>
+                <button id="T" class="letter">T</button>
+                <button id="U" class="letter">U</button>
+                <button id="V" class="letter">V</button>
+                <button id="W" class="letter">W</button>
+                <button id="X" class="letter">X</button>
+                <button id="Y" class="letter">Y</button>
+                <button id="Z" class="letter">Z</button>
+            </div>
+            <div id="gusses">
+                <!-- letters already guessed, update with js -->
+                <!-- current number of guesses counter update with js -->
+                <p>Letters Already Guessed: <span id="letters-guessed"></span></p>
+                <p>Number of Guesses Remaining: <span id="guesses-remaining">0</span>/6</p>
+            </div>
+        </div>
+        <div class="hangedImg">
+            <div id="hangedman">
+                <img id="hangedManImg" src="./assets/hangman-0.svg" alt="hanged Man 0 Lines">
+            </div>
+        </div>
+    </div>
+    <!-- Hidden win/lose -->
+    <div id="hidden">
+        <p>You Win!!</p>
+        <p>You Lose!!</p>
+    </div>
+</body>
+
+</html>
