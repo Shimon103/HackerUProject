@@ -13,10 +13,9 @@
     filter: grayscale(0.4);
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d2383616b61869099ed60cd556a7458f3808278b
+img#project {
+    border: 5px groove darkgreen;
+}
 .text-sd-black {
     text-shadow: 3px 3px 3px black;
 }
@@ -80,6 +79,7 @@ div#socials img {
 div#gallery {
     min-height: 130vh;
 }
+
 
 .card {
     filter: grayscale(0.7);
